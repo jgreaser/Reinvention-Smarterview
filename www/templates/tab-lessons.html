@@ -1,0 +1,22 @@
+<ion-view view-title="Lessons" ng-controller="LessonsCtrl as lessonsCtrl">
+  <ion-content>
+ <!--    <p>{{lessonsCtrl.message}}</p>
+    <ul>
+      <li ng-repeat="lesson in lessonsCtrl.lessons" ><a  href="#/tab/lessons/{{$index}}">{{lesson.user}}</a></li>
+    </ul> -->
+   
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="lesson in lessonsCtrl.lessons" type="item-text-wrap" href="#/tab/lessons/{{$index}}">
+        <h2>{{lesson.user}}</h2>
+        <p>{{lesson.title}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+      
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+
+
+
