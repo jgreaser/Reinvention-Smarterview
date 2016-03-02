@@ -19,14 +19,16 @@
                 <img ng-src="{{item.data.file.url}}">
             </div>
             <div class='video_extended' ng-show="item.type=='video_extended'">
+            <div ng-show="!item.data.remote_id"><h4>FILLER VIDEO</h4></div>
             <div my-youtube code="item.data.remote_id"></div>
-                <p>we're past video now</p>
+          
+
+               
                 <ul>
                   <li><strong>Source</strong>: {{item.data.source}}</li>
                   <li><strong>Remote ID</strong>: {{item.data.remote_id}}</li>
                   <li><strong>Description</strong>: {{item.data.video_description}}</li>
                 </ul>
-
             </div>
             <div class='listItem' ng-show="item.type=='list'">
                 <md ng-model="item.data.text"></md>
