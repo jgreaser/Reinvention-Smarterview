@@ -11,5 +11,5 @@ function LessonDetailCtrl($scope, $stateParams, Data) {
 
     $scope.lesson = Data.getLessonDetail($stateParams.lessonID).data; //sets lesson to the specific lesson for this ID
 
-
+    
 }

@@ -9,7 +9,7 @@ function Data($filter) {
     {
         "user": "rbrewster", 
         "status": "Created", 
-        "content": "{\"data\":[{\"type\":\"heading\",\"data\":{\"text\":\"Sticky water\\nHave you ever wondered why water sticks together in puddles? Or why your hands feel wet after running the faucet over them? The properties of adhesion and cohesion work together to make the molecules stick together, and stick to other things.\\n\\n\\n\"}},{\"type\":\"image_extended\",\"data\":{\"alternate_text\":\"Water droplet on a penny courtesy of  xperimentingwithscience.blogspot.com\",\"file\":{\"dimensions\":[500,334],\"type\":\"image/jpeg\",\"path\":\"attachments/surface-tension-water-penny.jpg\",\"url\":\"https://sf-flvs-crowdsourcing.s3.amazonaws.com/attachments/surface-tension-water-penny.jpg\",\"name\":\"surface-tension-water-penny.jpg\",\"size\":67447}}},{\"type\":\"heading\",\"data\":{\"text\":\"Movin' on Up\\nCohesion is the result of bonds between water molecules. Hydrogen atoms like to be together with other hydrogen atoms to share electrons in the outer shell. Adhesion results when those same hydrogen atoms want to share electrons with other molecules, like those found inside a container, or on your skin. Try this mini\\\\-activity:\\n\\n\"}},{\"type\":\"list\",\"data\":{\"text\":\" - Get a drinking straw and a clear water glass\\n - Fill the glass 3/4 of the way to the top with water\\n - Set the drinking straw in the water all the way to the bottom of the glass\\n - Put your finger over the open end of the straw and pull it up out of the class\\n - Note how much water is held in your straw\\n\"}},{\"type\":\"image_extended\",\"data\":{\"file\":{\"dimensions\":[616,445],\"type\":\"image/jpeg\",\"path\":\"attachments/finger-straw.jpg\",\"url\":\"https://sf-flvs-crowdsourcing.s3.amazonaws.com/attachments/finger-straw.jpg\",\"name\":\"finger-straw.jpg\",\"size\":26110},\"alternate_text\":\"Water in a straw Google Images\"}},{\"type\":\"heading\",\"data\":{\"text\":\"Why does it stay?\\nYour finger creates a vacuum that holds the water in the straw, but it \\\"climbs\\\" its way up the sides of the straw through capillary action. Capillary action causes blood to move into small vials when you have your blood drawn for a smear. As liquid moves through a small tube, it reaches out to the material for electrons. It moves along looking to share those in the outer shell, all thanks to cohesion and adhesion!\\n\"}},{\"type\":\"markdown\",\"data\":{\"text\":\"Let's check your understanding:\\n\\nAdhesion is the process of water molecules sticking to ......................... (other molecules, other water molecules)\\n\\nCapillary action moves ..................... (molecules, substances) along a material as it searches for electrons to share\\n\\n------------------ (Cohesion, Adhesion) causes water to stick to itself and gather in puddles after a rain storm.\"}}]}", 
+        "content": "{\"data\":[{\"type\":\"heading\",\"data\":{\"text\":\"Sticky water\\n\\n\\n\"}},{\"type\":\"markdown\",\"data\":{\"text\":\"Have you ever wondered why water sticks together in puddles? Or why your hands feel wet after running the faucet over them? The properties of adhesion and cohesion work together to make the molecules stick together, and stick to other things.\\n\\n\\n\"}},{\"type\":\"image_extended\",\"data\":{\"alternate_text\":\"Water droplet on a penny courtesy of  xperimentingwithscience.blogspot.com\",\"file\":{\"dimensions\":[500,334],\"type\":\"image/jpeg\",\"path\":\"attachments/surface-tension-water-penny.jpg\",\"url\":\"https://sf-flvs-crowdsourcing.s3.amazonaws.com/attachments/surface-tension-water-penny.jpg\",\"name\":\"surface-tension-water-penny.jpg\",\"size\":67447}}},{\"type\":\"markdown\",\"data\":{\"text\":\"Movin' on Up\\nCohesion is the result of bonds between water molecules. Hydrogen atoms like to be together with other hydrogen atoms to share electrons in the outer shell. Adhesion results when those same hydrogen atoms want to share electrons with other molecules, like those found inside a container, or on your skin. Try this mini\\\\-activity:\\n\\n\"}},{\"type\":\"list\",\"data\":{\"text\":\" - Get a drinking straw and a clear water glass\\n - Fill the glass 3/4 of the way to the top with water\\n - Set the drinking straw in the water all the way to the bottom of the glass\\n - Put your finger over the open end of the straw and pull it up out of the class\\n - Note how much water is held in your straw\\n\"}},{\"type\":\"image_extended\",\"data\":{\"file\":{\"dimensions\":[616,445],\"type\":\"image/jpeg\",\"path\":\"attachments/finger-straw.jpg\",\"url\":\"https://sf-flvs-crowdsourcing.s3.amazonaws.com/attachments/finger-straw.jpg\",\"name\":\"finger-straw.jpg\",\"size\":26110},\"alternate_text\":\"Water in a straw Google Images\"}},{\"type\":\"markdown\",\"data\":{\"text\":\"Why does it stay?\\nYour finger creates a vacuum that holds the water in the straw, but it \\\"climbs\\\" its way up the sides of the straw through capillary action. Capillary action causes blood to move into small vials when you have your blood drawn for a smear. As liquid moves through a small tube, it reaches out to the material for electrons. It moves along looking to share those in the outer shell, all thanks to cohesion and adhesion!\\n\"}},{\"type\":\"markdown\",\"data\":{\"text\":\"Let's check your understanding:\\n\\nAdhesion is the process of water molecules sticking to ......................... (other molecules, other water molecules)\\n\\nCapillary action moves ..................... (molecules, substances) along a material as it searches for electrons to share\\n\\n------------------ (Cohesion, Adhesion) causes water to stick to itself and gather in puddles after a rain storm.\"}}]}", 
         "pk": 173, 
         "lesson": 25
     }, 
@@ -463,17 +463,21 @@ function Data($filter) {
     }
 ];
 
-
-
     return {
         getLessons: function(){
         	var lessonArray = [];
 
         	for(var i=0; i < data.length; i++)
         	{
-
-        
-        		lessonArray.push({user: data[i].user, title: $filter('limitTo')(JSON.parse(data[i].content).data[0].data.text, 50)});
+        		lessonArray.push(
+                    {user: data[i].user, 
+                    pk: data[i].pk,
+                    title: $filter('limitTo')(JSON.parse(data[i].content).data[0].data.text, 50), 
+                    hasVideo: hasElement('video_extended', JSON.parse(data[i].content)),
+                    hasImage: hasElement('image_extended', JSON.parse(data[i].content)),
+                    hasHeading: hasElement('heading', JSON.parse(data[i].content)),
+                    hasList: hasElement('list', JSON.parse(data[i].content)),
+                    });
         	}
         	//console.log("lesson array is " + lessonArray);
 
@@ -494,4 +498,16 @@ function Data($filter) {
 	        
     	}
    };
+}
+////////////UTILITIES////////////
+
+function hasElement(x, y){
+    for(var i=0; i < y.data.length; i++)
+            {
+            
+            if (x ==  y.data[i].type){
+               // console.log(x + " " + y.data[i].type);
+                return true;}
+            }
+    return false;
 }

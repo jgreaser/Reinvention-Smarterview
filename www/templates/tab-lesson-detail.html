@@ -4,11 +4,10 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{lessonInfo.user}}">
+<ion-view view-title="{{lessonInfo.user}}" class="lesson-detail">
   <ion-content class="padding">
 <!--     <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
- -->    <H3>The proud product of {{lessonInfo.user}}
-    </h3>
+ -->    <div class='lesson-detail-author'><h4>by {{lessonInfo.user}}</h4></div>
     <hr />
 
      <div ng-repeat="item in lesson">
@@ -16,14 +15,11 @@
                 <h3>{{item.data.text}}</h3>
             </div>
             <div class='image_extended' ng-show="item.type=='image_extended'">
-                <img ng-src="{{item.data.file.url}}">
+                <img ng-src="{{item.data.file.url}}" class="lesson-detail-img">
             </div>
             <div class='video_extended' ng-show="item.type=='video_extended'">
             <div ng-show="!item.data.remote_id"><h4>FILLER VIDEO</h4></div>
-            <div my-youtube code="item.data.remote_id"></div>
-          
-
-               
+            <div my-youtube code="item.data.remote_id"></div>   
                 <ul>
                   <li><strong>Source</strong>: {{item.data.source}}</li>
                   <li><strong>Remote ID</strong>: {{item.data.remote_id}}</li>
