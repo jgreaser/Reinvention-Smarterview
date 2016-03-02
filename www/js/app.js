@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('smarterview', ['ionic', 'smarterview.controllers', 'smarterview.services', 'yaru22.md'])
+angular.module('smarterview', ['ionic', 'smarterview.controllers', 'smarterview.services',  'smarterview.directives', 'yaru22.md'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -95,7 +95,9 @@ angular.module('smarterview', ['ionic', 'smarterview.controllers', 'smarterview.
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+
+  ;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
