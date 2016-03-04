@@ -1,0 +1,44 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{lessonInfo.user}}" class="lesson-detail">
+  <ion-content class="padding">
+<!--     <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+ -->   
+
+     <div ng-repeat="item in lesson">
+            <div class='heading' ng-show="item.type=='heading'" >
+                <h3>{{item.data.text}}</h3>
+            </div>
+            <div class='image_extended' ng-show="item.type=='image_extended'">
+                <div class="imageContainer">
+                <img ng-src="{{item.data.file.url}}" class="lesson-detail-img"><br />
+                <caption>alt text (diplay for review):<br /> {{item.data.alternate_text}}</caption>
+                </div>
+            </div>
+            <div class='video_extended' ng-show="item.type=='video_extended'">
+            <div ng-show="!item.data.remote_id"><h4>FILLER VIDEO</h4></div>
+            <div class="videoBigContainer">
+              <div class="videoContainer"><div my-youtube class="video-wrapper" code="item.data.remote_id"></div>   
+                  <ul>
+                    <li><strong>Source</strong>: {{item.data.source}}</li>
+                    <li><strong>Remote ID</strong>: {{item.data.remote_id}}</li>
+                    <li><strong>Description</strong>: {{item.data.video_description}}</li>
+                  </ul>
+              </div>
+              
+              </div><hr />
+            </div>  
+            <div class='listItem markdown-list' ng-show="item.type=='list'">
+                <md ng-model="item.data.text"></md>
+            </div>
+            <div class='markdown markdown-area' ng-show="item.type=='markdown'">
+                  <md ng-model="item.data.text"></md>
+            </div>
+        </div>
+  </ion-content>
+</ion-view>
+

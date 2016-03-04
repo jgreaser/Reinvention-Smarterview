@@ -1,0 +1,205 @@
+/* Empty. Add your own CSS if you like */
+img {max-width: 80%;}
+body {background-color: #1f1f1f;
+    font-size:16px;
+    color:#1f1f1f;}
+
+
+
+
+h1, h2, h3, h4{
+color: #0C919A;
+font-family: 'Oswald', sans-serif;
+margin-bottom: 20px;
+}
+
+
+
+.container {max-width: 899px;
+
+            margin-left: auto;
+            margin-right: auto;}
+
+.tab-nav {position: absolute;
+           }
+
+.bar-header {background-color: #0c919a !important;
+            max-width: 899px !important;
+         margin-left: auto;
+    margin-right: auto;
+}
+
+
+.custom-header {
+position:fixed !important;
+    top:0 !important;
+    z-index:100 !important;
+    background-color: #0c919a !important;
+            max-width: 899px !important;
+         margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    min-width: 500px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.tabs {background-color: #0c919a !important;
+            max-width: 899px !important;
+    }
+
+.nav-view-web-max-width {
+
+    max-width: 899px;
+ margin-left: auto;
+    margin-right: auto;}
+
+.header-item {  color: #fb9621 !important;
+            font-family: 'Oswald', sans-serif !important;
+            font-size: 24px;
+            text-align: left !important;
+}
+.header-nav {color: #fb9621 !important;
+            text-decoration: none  !important;
+        }
+
+
+.card-header{
+    background-color: #05c0cd;
+    color: #FAFAFA;
+}
+.card-header-error{
+    background-color: #fb9621;
+    color: #FAFAFA;
+}
+
+.item-error {
+        background-color: #Fafafa;
+    color: #f26724;
+    padding: 5px;
+    margin: 5px;
+    font-size: smaller;
+    font-style: italic;
+    font-weight: bold}
+
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+  
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: 100%;
+}
+
+.lessons-cards-nav{
+    text-decoration: none;
+    color: #3f3f3f;
+
+}
+
+.item {color: #fafafa !important;}
+
+.lessons-card{
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.lessons-cards-author{
+font-style: italic;
+
+}
+
+
+.lessons{
+	background-color: #DDDDDD;
+
+}
+
+.lesson-detail{
+    color: #0f0f0f;
+	background-color: #FAFAFA;
+
+}
+.lesson-detail-author {
+	text-align: right;
+
+}
+
+
+
+.imageContainer{
+    text-align: center !important;
+    color: #3f3f3f !important;
+    font-size: smaller;
+}
+
+
+.lesson-detail-img
+{
+	margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+	border-radius: 10px;
+    border:2px solid #0F0F0F;
+
+}
+
+.markdown-area {
+
+    margin: 20px;
+}
+.markdown-list {
+ margin: 20px;   
+}
+
+ul {
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+
+ol {
+    list-style-type: upper-roman;
+}
+
+button {border-radius: 5px;}
+
+.videoBigContainer {
+    padding: 20px;
+    margin-left:20px;
+    margin-right: 20px;
+    background-color: #1f1f1f;
+    color: #fafafa;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.videoContainer{
+            max-width:700px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
