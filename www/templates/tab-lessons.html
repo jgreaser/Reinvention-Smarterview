@@ -1,51 +1,24 @@
-<ion-view view-title="Lessons" ng-controller="LessonsCtrl as lessonsCtrl">
-  <ion-content class='lessons'>
- <!--    <p>{{lessonsCtrl.message}}</p>
-    <ul>
-      <li ng-repeat="lesson in lessonsCtrl.lessons" ><a  href="#/tab/lessons/{{$index}}">{{lesson.user}}</a></li>
-    </ul> -->
-   
-<!--     <ion-list>
-      <ion-item class="item-remove-animate item-avatar  item-icon-left item-icon-right" ng-repeat="lesson in lessonsCtrl.lessons" type="item-text-wrap" href="#/tab/lessons/{{$index}}">
-        <i class="icon ion-social-youtube icon-accessory" ng-show="lesson.hasVideo == true"></i>
-        
-        <span class='flagged'><span ng-show="lesson.hasHeading != true">missing heading</span></span>
-        <i class="icon ion-alert-circled icon-accessory" ng-show="lessonsCtrl.showAlert(lesson.hasHeading)"></i>
-        <i class="icon ion-chevron-right icon-accessory" ng-show="!lessonsCtrl.showAlert(lesson.hasHeading)"></i>
+<ion-view view-title="Assets" ng-controller="LessonsCtrl as lessonsCtrl">
+    <ion-content class='lessons'>
 
-      
-      </ion-item>
-    </ion-list> -->
+        <div class="card item-remove-animate lessons-card" ng-repeat="lesson in lessonsCtrl.lessons">
+            <a class="lessons-cards-nav" href="#/tab/lessons/{{$index}}">
+                <div class="item item-divider" ng-class="{'card-header': lessonsCtrl.showAlert(lesson.hasHeading) != true}">
+                    {{lesson.pk}} by <span class="lessons-cards-author">{{lesson.user}}</span>
+                </div>
+                <div class="item item-text-wrap ">
+                    <i class="icon ion-social-youtube icon-accessory pull-right" ng-show="lesson.hasVideo == true"></i> {{lesson.title}}...
 
-
-<div class="card item-remove-animate" ng-repeat="lesson in lessonsCtrl.lessons">
-<a class="lessons-cards-nav" href="#/tab/lessons/{{$index}}">
-  <div class="item item-divider" ng-class="{'item-calm': lessonsCtrl.showAlert(lesson.hasHeading) != true}">
-    {{lesson.pk}} by <span class="lessons-cards-author">{{lesson.user}}</span>
-  </div>
-  <div class="item item-text-wrap ">
-            <i class="icon ion-social-youtube icon-accessory pull-right" ng-show="lesson.hasVideo == true"></i>
-
-      {{lesson.title}}...
-
-  </div>
-  <div class="item item-divider assertive" ng-show="lessonsCtrl.showAlert(lesson.hasHeading)">
-          <i class="icon ion-alert-circled icon-accessory" ng-show="lessonsCtrl.showAlert(lesson.hasHeading)"></i>
-
-    missing heading
-  </div>
-    </a>
-</div>
+                </div>
+                <div class="item item-divider assertive" ng-show="lessonsCtrl.showAlert(lesson.hasHeading)">
+                    <i class="icon ion-alert-circled icon-accessory" ng-show="lessonsCtrl.showAlert(lesson.hasHeading)"></i> missing heading
+                </div>
+            </a>
+        </div>
 
 
 
 
 
-
-
-  </ion-content>
+    </ion-content>
 </ion-view>
-
-
-
-
