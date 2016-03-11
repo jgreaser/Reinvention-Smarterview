@@ -13,7 +13,7 @@ font-family: 'Oswald', sans-serif;
 margin-bottom: 20px;
 }
 
-
+.navButtons {    float:right;}
 
 .container {max-width: 899px;
 
@@ -22,6 +22,8 @@ margin-bottom: 20px;
 
 .tab-nav {position: absolute;
            }
+
+
 
 .bar-header {background-color: #0c919a !important;
             max-width: 899px !important;

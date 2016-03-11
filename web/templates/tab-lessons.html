@@ -4,7 +4,7 @@
         <div class="card item-remove-animate lessons-card" ng-repeat="lesson in lessonsCtrl.lessons">
             
                 <div class="item item-divider" ng-class="{'card-header': lessonsCtrl.showAlert(lesson.hasHeading) != true,'card-header-error': lessonsCtrl.showAlert(lesson.hasHeading) != false }">
-                    <button class=""><a class="lessons-cards-nav" href="#/tab/lessons/{{$index}}">View asset# {{lesson.pk}} </a></button> by <span class="lessons-cards-author">{{lesson.user}}</span> ||                     <i class="icon ion-social-youtube icon-accessory pull-right" ng-show="lesson.hasVideo == true"></i>
+                    <button class=""><a class="lessons-cards-nav" ng-click="lessonsCtrl.setIndex($index)" href="#/tab/lessons/{{$index}}">View asset# {{lesson.pk}} </a></button> by <span class="lessons-cards-author">{{lesson.user}}</span> ||                     <i class="icon ion-social-youtube icon-accessory pull-right" ng-show="lesson.hasVideo == true"></i>
 {{lesson.title}}...
                 </div>
                 <div class="item item-divider assertive" ng-show="lessonsCtrl.showAlert(lesson.hasHeading)">

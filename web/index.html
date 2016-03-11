@@ -33,6 +33,7 @@
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
 
+    <script src="js/controller-navigation.js"></script>
     <script src="js/controller-lessons.js"></script>
     <script src="js/controller-lesson-detail.js"></script>
     <script src="js/services.js"></script>
@@ -40,9 +41,22 @@
 
 </head>
 
-<body ng-app="smarterview">
+<body ng-app="smarterview" ng-cloak>
     <div class="container">
-    <div class="custom-header header-item"><a href="#/tab/lessons" class="header-nav">Smarterview <--</a></div>
+    <div class="custom-header header-item" ng-controller="NavigationController as navCtrl">
+
+        <a href="#/tab/lessons" class="header-nav">Smarterview </a>  
+
+        <div class="navButtons" ng-show="navCtrl.showNav == true">
+   
+
+      <button class=""  ng-show="navCtrl.showBack == true"><a class="lessons-cards-nav" ui-sref="tab.lesson-detail({lessonID: navCtrl.getLast()})">LAST</a></button>
+   <button class=""  ><a class="lessons-cards-nav" href="#/tab/lessons">ALL LESSONS</a></button>
+
+         <button class=""  ng-show="navCtrl.showNext == true"><a class="lessons-cards-nav" ui-sref="tab.lesson-detail({lessonID: navCtrl.getNext()})">NEXT</a></button>
+  </div>
+
+  </div>
     <!--
       The nav bar that will be updated as we navigate between views.
     -->

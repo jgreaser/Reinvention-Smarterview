@@ -494,7 +494,8 @@ function Data($filter) {
     	get: function(lessonID) {
     		console.log("get " + lessonID) ;
 	      	        
-	          return data[lessonID];
+	        //  return data[lessonID];
+              return data[02];
 	        
     	}
    };

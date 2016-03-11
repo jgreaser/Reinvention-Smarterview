@@ -1,5 +1,7 @@
 angular.module('smarterview.controllers', [])
 
+
+
 .controller('DashCtrl', function($scope) {})
 
 /*.controller('LessonsCtrl', function($scope, Data) {

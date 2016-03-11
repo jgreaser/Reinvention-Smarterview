@@ -3,12 +3,9 @@ angular
     .module('smarterview')
     .controller('LessonDetailCtrl', LessonDetailCtrl);
 
-LessonDetailCtrl.$inject = ['$scope', '$stateParams', 'Data'];
+LessonDetailCtrl.$inject = ['$scope','$state','$stateParams', 'Data'];
 
-function LessonDetailCtrl($scope, $stateParams, Data) {
-
-    $scope.lessonInfo = Data.get($stateParams.lessonID); //this get the lesson ID from the URL
-
+function LessonDetailCtrl($scope, $state,  $stateParams, Data) {
+	var vm = this;
     $scope.lesson = Data.getLessonDetail($stateParams.lessonID).data; //sets lesson to the specific lesson for this ID
-
 }
