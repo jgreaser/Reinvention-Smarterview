@@ -5,7 +5,19 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('smarterview', ['ionic', 'smarterview.controllers', 'smarterview.services',  'smarterview.directives', 'yaru22.md'])
+
+
+
+
+
+angular.module('smarterview', ['ionic',  'yaru22.md', 'ngCookies'])
+
+.run(function(){
+  var APPLICATION_ID = 'A9058C57-61DE-A0EF-FF76-DB1711200A00',
+    SECRET_KEY = '5CBF309E-5227-9207-FF81-1A9B52D92F00',
+    VERSION = 'v1'; //default application version;
+Backendless.initApp(APPLICATION_ID, SECRET_KEY, VERSION);
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -69,38 +81,18 @@ angular.module('smarterview', ['ionic', 'smarterview.controllers', 'smarterview.
       }
     })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
+  .state('login', {
+    url: '/login',
+        templateUrl: 'templates/tab-login.html',
+        controller: 'LoginCtrl'
+      
+    
   })
 
   ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/lessons');
+  $urlRouterProvider.otherwise('/login');
 
 });

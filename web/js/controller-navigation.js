@@ -7,15 +7,13 @@ NavigationController.$inject = ['$state', '$stateParams'];
 
 function NavigationController($state, $stateParams) {
 	
-	 var vm = this;
+	var vm = this;
 
 	vm.showNav = true;
 
 	vm.showBack = true;
-  	vm.showNext = true;
+  vm.showNext = true;
 
-	console.log("State is");
-  	console.log($state.current);
 
 
   vm.setNavigation = function(val){
@@ -27,7 +25,6 @@ function NavigationController($state, $stateParams) {
 
   vm.getNext = function(){
 
-      console.log($stateParams.lessonID);
 
       var currentLessonID = $stateParams.lessonID;
       var definitelyANumber = parseInt(currentLessonID);
@@ -38,8 +35,7 @@ function NavigationController($state, $stateParams) {
       return definitelyANumber;
     };
 
-     vm.getLast = function(){
-      console.log($stateParams.lessonID);
+  vm.getLast = function(){
 
       var currentLessonID = $stateParams.lessonID;
       var definitelyANumber = parseInt(currentLessonID);

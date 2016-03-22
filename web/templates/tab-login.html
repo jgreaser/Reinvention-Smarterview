@@ -1,0 +1,29 @@
+<ion-view view-title="login" ng-controller="LoginCtrl as loginCtrl">
+    <ion-content class="padding">
+        <h2>Account</h2>
+
+
+	    <br />
+
+	    <div ng-show="loginCtrl.isLoggedIn != true">
+		<div class="" >
+			  <label for="usr">Name:</label>
+			  <input type="text" class="form-control" id="usr" ng-model="loginCtrl.userName">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Password:</label>
+			  <input type="password" class="form-control" id="pwd" ng-model="loginCtrl.password">
+			 <br />
+			 <p>error message goes here</p>
+			 <button ng-click="loginCtrl.login();">LOGIN</button>		
+
+		</div>
+	</div>
+       		<button ng-click="loginCtrl.logout();">LOGOUT</button>
+       		<br />
+       	<button ng-click="loginCtrl.checkstatus();">CHECK LOGIN STATUS</button>
+
+        <h1>Message is {{loginCtrl.message}}</h1>
+        <h1>Is Logged In is {{loginCtrl.isLoggedIn}}</h1>
+    </ion-content>
+</ion-view>
